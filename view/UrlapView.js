@@ -27,8 +27,8 @@ class UrlapView {
                let ertek = elem.ertek;
                let kulcs = elem.key;
                this.#urlapAdatok[kulcs] = ertek;
-               console.log(this.#urlapAdatok)
-                
+               //console.log(this.#urlapAdatok)
+                this.sajatEsemeny("AdatKiir");
              });
         }
         else{
@@ -66,6 +66,10 @@ class UrlapView {
         txt+=`<div class="valid lathato">OK</div>`;
         txt+=`<div class="invalid lathato">${key}">${this.#leiro[key].valid}</div>`;
         this.formElem.append(txt);
+  }
+  sajatEsemeny(nev){
+    let esemenyem = new CustomEvent(nev, {detail: this.#urlapAdatok})
+    window.dispatchEvent(esemenyem);
   }
   
 }
