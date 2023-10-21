@@ -18,5 +18,14 @@ const UrlapLeriro = {
     },
     valid: "1000 és 2023 közötti szám legyen"
   },
+  nem: {
+    megj:"Nemed",
+    type:"radio",
+    value:{
+      ferfi: "Férfi",
+      no: "Nő",
+    }
+
+  }
 };
 export default UrlapLeriro;
